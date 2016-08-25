@@ -3,11 +3,12 @@ package net.ivango.chat.common.responses;
 import net.ivango.chat.common.requests.Message;
 
 public class IncomingMessage implements Message {
-    private String from, message;
+    private String from, senderName, message;
     private boolean broadcast;
 
-    public IncomingMessage(String from, String message, boolean broadcast) {
+    public IncomingMessage(String from, String senderName, String message, boolean broadcast) {
         this.from = from;
+        this.senderName = senderName;
         this.message = message;
         this.broadcast = broadcast;
     }
@@ -18,6 +19,10 @@ public class IncomingMessage implements Message {
 
     public String getMessage() {
         return message;
+    }
+
+    public String getSenderName() {
+        return senderName;
     }
 
     public boolean isBroadcast() {
