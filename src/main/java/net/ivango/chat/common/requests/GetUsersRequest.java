@@ -1,3 +1,3 @@
 package net.ivango.chat.common.requests;
 
-public class GetUsersRequest implements Request {}
+public class GetUsersRequest implements Message {}

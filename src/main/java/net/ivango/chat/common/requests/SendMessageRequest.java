@@ -1,6 +1,6 @@
 package net.ivango.chat.common.requests;
 
-public class SendMessageRequest implements Request {
+public class SendMessageRequest implements Message {
     private String receiver, message;
     private boolean broadcast;
 

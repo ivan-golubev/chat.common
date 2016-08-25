@@ -1,7 +1,7 @@
 package net.ivango.chat.common.requests;
 
 
-public class LoginRequest implements Request {
+public class LoginRequest implements Message {
     private String userName;
 
     public LoginRequest(String userName) {

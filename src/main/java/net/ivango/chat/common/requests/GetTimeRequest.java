@@ -1,4 +1,4 @@
 package net.ivango.chat.common.requests;
 
 
-public class GetTimeRequest implements Request {}
+public class GetTimeRequest implements Message {}

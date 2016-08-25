@@ -1,6 +1,8 @@
 package net.ivango.chat.common.responses;
 
-public class GetTimeResponse implements Response {
+import net.ivango.chat.common.requests.Message;
+
+public class GetTimeResponse implements Message {
     private long utcServerTime;
 
     public GetTimeResponse(long utcServerTime) {
