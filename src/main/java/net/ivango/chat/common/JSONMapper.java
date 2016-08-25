@@ -28,18 +28,18 @@ public class JSONMapper {
         return gson.fromJson(jsonObject.getAsJsonObject(VALUE_FIELD), type);
     }
 
-    public static void main(String[] args) throws ClassNotFoundException {
-        JSONMapper jsonMapper = new JSONMapper();
-
-        Message loginRequest = new LoginRequest("Boris");
-        String json = jsonMapper.toJSON(loginRequest);
-
-        Message loginRequest1 = (Message) jsonMapper.fromJson(json);
-
-        HandlerMap map = new HandlerMap();
-        map.put(LoginRequest.class, l -> System.out.println("LoginMessage received !"));
-
-        map.get(loginRequest1.getClass()).onMessageReceived(loginRequest1);
-    }
+//    public static void main(String[] args) throws ClassNotFoundException {
+//        JSONMapper jsonMapper = new JSONMapper();
+//
+//        Message loginRequest = new LoginRequest("Boris");
+//        String json = jsonMapper.toJSON(loginRequest);
+//
+//        Message loginRequest1 = (Message) jsonMapper.fromJson(json);
+//
+//        HandlerMap map = new HandlerMap();
+//        map.put(LoginRequest.class, l -> System.out.println("LoginMessage received !"));
+//
+//        map.get(loginRequest1.getClass()).onMessageReceived(loginRequest1);
+//    }
 
 }

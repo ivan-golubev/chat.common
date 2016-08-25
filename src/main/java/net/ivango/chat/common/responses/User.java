@@ -2,12 +2,10 @@ package net.ivango.chat.common.responses;
 
 public class User {
     private String userName, address;
-    private int messageCount;
 
-    public User(String userName, String address, int messageCount) {
+    public User(String userName, String address) {
         this.userName = userName;
         this.address = address;
-        this.messageCount = messageCount;
     }
 
     public String getUserName() {
@@ -18,7 +16,8 @@ public class User {
         return address;
     }
 
-    public int getMessageCount() {
-        return messageCount;
+    @Override
+    public String toString() {
+        return userName;
     }
 }
