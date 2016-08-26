@@ -1,14 +1,18 @@
 package net.ivango.chat.common;
 
 
-import com.google.gson.*;
-import net.ivango.chat.common.misc.HandlerMap;
-import net.ivango.chat.common.requests.LoginRequest;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
 import net.ivango.chat.common.requests.Message;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Maps messages to JSON and back.
+ * Adds type info to the payload.
+ * */
 public class JSONMapper {
 
     private final static String TYPE_FIELD = "type", VALUE_FIELD = "value";
@@ -27,19 +31,4 @@ public class JSONMapper {
         Class type = Class.forName(jsonObject.get(TYPE_FIELD).getAsString());
         return gson.fromJson(jsonObject.getAsJsonObject(VALUE_FIELD), type);
     }
-
-//    public static void main(String[] args) throws ClassNotFoundException {
-//        JSONMapper jsonMapper = new JSONMapper();
-//
-//        Message loginRequest = new LoginRequest("Boris");
-//        String json = jsonMapper.toJSON(loginRequest);
-//
-//        Message loginRequest1 = (Message) jsonMapper.fromJson(json);
-//
-//        HandlerMap map = new HandlerMap();
-//        map.put(LoginRequest.class, l -> System.out.println("LoginMessage received !"));
-//
-//        map.get(loginRequest1.getClass()).onMessageReceived(loginRequest1);
-//    }
-
 }

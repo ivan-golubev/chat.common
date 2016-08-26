@@ -5,6 +5,10 @@ import net.ivango.chat.common.requests.Message;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Holds the class-to-handler mapping.
+ * Used by clients and the server to process the incoming messages.
+ * */
 public class HandlerMap {
     private Map<Class, MessageHandler> handlerMap = new HashMap<>();
 
